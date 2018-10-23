@@ -2,16 +2,32 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>The web site of juanmendg</title>
+    <title>Crossword Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+    <link rel="stylesheet" href="slider.css">
   </head>
   <body style="font-family:'Lucida Console', Monaco, monospace;">
-    <p id="output" class="w3-center"></p>
+    <div class="w3-input">
+      <input type="text" id="txtInput" placeholder="Word" class="w3-input w3-animate-input" style="width:33.3%">
+      <div class="w3-bar">
+        <input class="w3-check" type="checkbox" checked="checked" id="show_list"><label>Show list</label>
+        <input class="w3-check" type="checkbox" id="cheat"><label>Cheat</label>
+        <div class="slidecontainer">
+          <label id="widthLbl">Width:</label>
+          <input type="range" min="0" max="20" value="10" class="slider" id="wrange">
+        </div>
+      </div>
+      <div class="w3-bar">
+        <button class="w3-btn w3-bar-item w3-border w3-black" style="width:50%" id="add_btn" onClick="addBtnTrigger()">Add Word</button>
+        <button class="w3-btn w3-bar-item w3-border w3-border-teal" style="width:50%" id="generate_btn" onClick="generateBtnTrigger()">Generate</button>
+      </div>
+    </div>
     <div class="w3-container">
-      <ul id="list" class="w3-ul">
+      <p>Select to delete:</p>
+      <ul id="words"> <!-- il elements should consist of buttons w/ unique IDs that will delete on click -->
       </ul>
     </div>
-    <script src="generator.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
